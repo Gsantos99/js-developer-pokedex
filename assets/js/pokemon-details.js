@@ -1,4 +1,5 @@
 // Flags de estado - serão mudadas no clique do usuário
+const listPokemon = document.getElementById('pokedexContainer')
 let pokemonSelectedActive = false
 let selectedPokemonBg
 let selectedPokemon
@@ -73,7 +74,7 @@ pokemonList.addEventListener('click', e => {
     const pokemonSelectedActive = e.target.id
 
     pokeApi
-      .getPokemonDescription(pokemonSelected)
+      .getPokemonDescription(pokemonSelectedActive)
       .then(pokemon => {
         const newHtml = convertPokemonDescriptionToHtml(pokemon)
         pokemonList.innerHTML += newHtml
@@ -83,7 +84,7 @@ pokemonList.addEventListener('click', e => {
 
         pokemonSelectedActive = true
       })
-      .catch(error => console.error(error))
+      .catch(error => console.log(error))
   } else {
     if (e.target.id === 'descriptionBg') {
       selectedPokemon.parentElement.removeChild(selectedPokemon)

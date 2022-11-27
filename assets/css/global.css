@@ -1,24 +1,47 @@
 * {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #f6f8fc;
+  background-color: #f6f8fc;
+}
+
+#img-title {
+   text-align: center;
+   
+}
+
+#loadMoreButton {
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem 0;
+  color: #fff;
+  font-size: 15px;
+  background-color: #405cf5;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  height: 2.5rem;
+  min-width: 6rem;
+  text-align: center;
 }
 
 .content {
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
-    background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  background-color: rgb(225, 72, 72);
 }
 
 @media screen and (min-width: 992px) {
-    .content {
-        max-width: 992px;
-        height: auto;
-        margin: 1rem auto;
-        border-radius: 1rem;
-    }
+  .content {
+    max-width: 992px;
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 1rem;
+  }
 }

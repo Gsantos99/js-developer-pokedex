@@ -30,6 +30,14 @@ function loadPokemonItens(offset, limit) {
     })
 }
 
+function reloadPokemonItens(){
+    pokemonList = document.getElementById("pokemonList")
+
+    loadPokemonItens(0, 10)
+    _offset = 0
+    
+}
+
 loadPokemonItens(offset, limit)
 
 loadMoreButton.addEventListener('click', () => {

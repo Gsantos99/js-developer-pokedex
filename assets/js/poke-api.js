@@ -16,23 +16,6 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
   return pokemon
 }
 
-pokeApi.getPokemonDetail = pokemon => {
-  return fetch(pokemon.url)
-    .then(response => response.json())
-    .then(convertPokeApiDetailToPokemon)
-}
-
-pokeApi.getPokemons = (offset = 0, limit = 5) => {
-  const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
-
-  return fetch(url)
-    .then(response => response.json())
-    .then(jsonBody => jsonBody.results)
-    .then(pokemons => pokemons.map(pokeApi.getPokemonDetail))
-    .then(detailRequests => Promise.all(detailRequests))
-    .then(pokemonsDetails => pokemonsDetails)
-}
-
 function convertPokeApiToPokemonDescription(pokemon, pokemonSpecies) {
   const pokemonDescription = new PokemonDescription()
 
@@ -69,19 +52,38 @@ function convertPokeApiToPokemonDescription(pokemon, pokemonSpecies) {
   return pokemonDescription
 }
 
+pokeApi.getPokemonDetail = pokemon => {
+  return fetch(pokemon.url)
+    .then(response => response.json())
+    .then(convertPokeApiDetailToPokemon)
+    .catch(error => console.error(error))
+}
+
+pokeApi.getPokemons = (offset = 0, limit = 5) => {
+  const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+
+  return fetch(url)
+    .then(response => response.json())
+    .then(jsonBody => jsonBody.results)
+    .then(pokemons => pokemons.map(pokeApi.getPokemonDetail))
+    .then(detailRequests => Promise.all(detailRequests))
+    .then(pokemonsDetails => pokemonsDetails)
+}
+
 pokeApi.getPokemonSpecies = pokemon => {
   return fetch(pokemon.species.url)
     .then(response => response.json())
     .then(pokemonSpecies =>
       convertPokeApiToPokemonDescription(pokemon, pokemonSpecies)
     )
-    .catch(error => console.error(error))
+    .catch(error => console.log(error))
 }
+
 pokeApi.getPokemonDescription = pokemonName => {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
 
   return fetch(url)
     .then(response => response.json()) // Converting response to Json
     .then(pokemon => pokeApi.getPokemonSpecies(pokemon))
-    .catch(error => console.error(error))
+    .catch(error => console.log(error))
 }
