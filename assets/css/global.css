@@ -1,47 +1,62 @@
-* {
+*{
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body {
+body{
   background-color: #f6f8fc;
 }
 
 #img-title {
-   text-align: center;
-   
+  text-align: center;
 }
 
-#loadMoreButton {
-  padding: 0.25rem 0.75rem;
-  margin: 0.25rem 0;
+.page-title{
+  color: #170000;
+}
+
+.content {
+  padding: 1rem;
+  background-color: aliceblue;
+  min-height: 97vh;
+}
+
+.light-bg{
+  opacity: 0.6;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.pagination button{
+  padding: .25rem .75rem;
+  margin: .25rem 0;
   color: #fff;
-  font-size: 15px;
   background-color: #405cf5;
   border-width: 0;
-  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
-    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
   box-sizing: border-box;
   border: none;
-  border-radius: 1.5rem;
+  border-radius:.5rem;
   cursor: pointer;
-  height: 2.5rem;
+  height: 2.5rem;  
   min-width: 6rem;
   text-align: center;
 }
 
-.content {
-  width: 100vw;
-  height: 100vh;
-  padding: 1rem;
-  background-color: rgb(225, 72, 72);
-}
-
-@media screen and (min-width: 992px) {
-  .content {
-    max-width: 992px;
-    height: auto;
-    margin: 1rem auto;
-    border-radius: 1rem;
+@media screen and (min-width: 992px){
+  .content{
+      max-width: 992px;
+      height:auto;
+      margin: 1rem auto;
+      border-radius: 1rem;
   }
 }

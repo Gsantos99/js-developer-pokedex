@@ -1,10 +1,9 @@
-
 class Pokemon {
     number;
     name;
     type;
     types = [];
-    photo;
+    sprite;
 }
 
 class PokemonDescription{
