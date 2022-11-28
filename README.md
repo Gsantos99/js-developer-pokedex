@@ -11,13 +11,13 @@ Esse é um projeto prático da trilha JavaScript Developer do bootcamp Orange Te
 </p>
 
 <p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+  <img alt="License" href="">
 </p>
 
 <br>
 
 <p align="center">
-  <img alt="pokedex" src="https://cdn.dribbble.com/users/1171520/screenshots/6540871/pokedex2.png?compress=1&resize=800x600&vertical=top" width="100%">
+  <img alt="pokedex" src="assets/img/CAPA POKEDEX.png" width="85%">
 </p>
 
 ## 🚀 Tecnologias
